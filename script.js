@@ -29,34 +29,26 @@ asynchronousBtn.addEventListener('click', () => {
   let odd = [];
   let even = [];
 
-  for (let i = 1; i <= inputNumber.value; i++) {
-    if (i % 2 === 0) {
-      even.push(i);
-      evenNum = even.join('  ');
-
-      evenShow.innerHTML = evenNum;
+  let i = 1;
+  setInterval(() => {
+    if (i <= inputNumber.value) {
+      if (i % 2 !== 0) {
+        odd.push(i);
+        oddNum = odd.join(' ');
+        oddShow.innerHTML = oddNum;
+      }
+      i++;
     }
-  }
-});
-// let i = 0;
-// setInterval(() => {
-//   if (i <= inputValue) {
-//     if (i % 2 !== 0) {
-//       odd.push(i);
-//       oddString = odd.join(' ');
-//       oddShowElm.innerHTML = oddString;
-//     }
-//     i++;
-//   }
-// }, 500);
+  }, 200);
 
-// let j = 0;
-// setInterval(() => {
-//   if (j <= inputValue)
-//     if (j % 2 === 0) {
-//       even.push(j);
-//       evenString = even.join(' ');
-//       evenShowElm.innerHTML = evenString;
-//     }
-//   j++;
-// }, 300);
+  let j = 1;
+  setInterval(() => {
+    if (j <= inputNumber.value)
+      if (j % 2 === 0) {
+        even.push(j);
+        evenNum = even.join(' ');
+        evenShow.innerHTML = evenNum;
+      }
+    j++;
+  }, 400);
+});
